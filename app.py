@@ -62,7 +62,7 @@ def biggest_contour(contours):
                 max_area = area
     return biggest
 
-@app.route('/process', methods=['POST'])
+@app.route('/', methods=['POST'])
 def process():
     if 'file' not in request.files:
         return jsonify({"error": "No file part"}), 400
