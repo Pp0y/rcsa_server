@@ -40,9 +40,9 @@ def process_image(image_data):
         input_points[2] = points[np.argmax(points_diff)]
 
         # แปลง Perspective
-        converted_points = np.float32([[0, 0], [1920, 0], [0, 1080], [1920, 1080]])
+        converted_points = np.float32([[0, 0], [1024, 0], [0, 1024], [1024, 1024]])
         matrix = cv2.getPerspectiveTransform(input_points, converted_points)
-        img_output = cv2.warpPerspective(img_original, matrix, (1920, 1080))
+        img_output = cv2.warpPerspective(img_original, matrix, (1024, 1024))
 
         return img_output
 
